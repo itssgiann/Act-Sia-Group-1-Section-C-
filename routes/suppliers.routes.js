@@ -10,3 +10,11 @@ router.get('/', (req, res) => {
     res.json(suppliers);
 });
 
+router.get('/id:', (req, res) => {
+    const supplier = suppliers.find(s => s.id === parseInt(req.params.id));
+    if (!supplier) {
+        return res.status(404).json({ message: "Supplier not found." });
+    }
+
+    res.json(supplier);
+});
