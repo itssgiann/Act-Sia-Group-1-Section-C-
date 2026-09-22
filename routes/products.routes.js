@@ -3,7 +3,7 @@ const router = express.Router();
 
 let products = [
     {id:1, name: "Laptop", category: "electronics", price:899},
-    {id:2, name: "Desk Chair", category: "furniture", price:150}
+    {id:2, name: "Desk  ", category: "furniture", price:15}
 ];
 
 router.get('/', (req, res) => {
@@ -25,12 +25,12 @@ router.get('/', (req, res) => {
     if (!product) {
         return res.status(404).json({
             success:false,
-            message:"not Found."
+            message:"Product not Found."
         });
     }
     
     res.json({
-        success:false,
+        success:true,
         data: product
     });
 });
@@ -41,7 +41,7 @@ router.post ('/', (req, res) => {
     if (!name || !category || !price) {
         return res.status(400).json ({
             success:false,
-            message:"Missing"
+            message:"Missing required fields."
         });
     }
     
