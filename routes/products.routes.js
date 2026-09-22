@@ -3,8 +3,8 @@ const router = express.Router();
 
 let products = [
     {id:1, name: "Laptop", category: "electronics", price:899},
-    {id:2, name: "Desk  ", category: "furniture", price:15}
-];
+    {id:2, name: "Desk Chair ", category: "furniture", price:200}
+];  
 
 router.get('/', (req, res) => {
     let result = products;
