@@ -4,7 +4,7 @@ const router = express.Router();
 let notification = [
     {id: 1, type: "alert", message: "System Maintenance"},
     {id: 2, type: "info", message: "New user registered"}
-];
+]; 
 
 router.get('/', (req, res) => {
     let result = notifications;
