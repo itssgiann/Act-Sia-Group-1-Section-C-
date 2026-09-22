@@ -18,3 +18,24 @@ router.get('/id:', (req, res) => {
 
     res.json(supplier);
 });
+
+router.post('/', (req, res) => {
+    const companyName = req.body.companyName;
+    const country = req.body.country;
+
+    if(!companyName || !country) {
+        return res.status(404).json({ message: "Missing required fields." })
+    }
+
+    const newSupplier = {
+        id: suppliers.lenght = 1,
+        companyName: companyName,
+        country: country
+    };
+
+    suppliers.push(newSupplier);
+
+        res.status(201).json(newSupplier);
+});
+
+module.exports = router;
